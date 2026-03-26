@@ -1,0 +1,13 @@
+body { margin: 0; font-family: 'Inter', sans-serif; background: #121212; color: white; }
+#app { display: flex; height: 100vh; }
+#sidebar { width: 340px; background: #1e1e1e; padding: 25px; display: flex; flex-direction: column; z-index: 1000; }
+#map { flex-grow: 1; }
+.header h1 { color: #00e676; margin: 0; font-size: 24px; }
+.input-group { margin-bottom: 15px; }
+.custom-select { width: 100%; padding: 10px; background: #2a2a2a; color: white; border: 1px solid #333; border-radius: 8px; }
+.mode-selector { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px; margin-bottom: 15px; }
+.mode-btn { background: #2a2a2a; border: 1px solid #333; color: #888; padding: 8px; border-radius: 5px; cursor: pointer; }
+.mode-btn.active { background: #00e676; color: black; font-weight: 600; }
+.primary-btn { width: 100%; background: #00e676; padding: 15px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; }
+.profile-card { margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #333; padding-top: 15px; }
+.res-card { background: #2a2a2a; padding: 15px; border-radius: 10px; border-left: 4px solid #00e676; margin-top: 20px; }

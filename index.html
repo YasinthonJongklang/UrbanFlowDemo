@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Flow | Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <aside id="sidebar">
+            <div class="header">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h1 style="color: #00e676; margin: 0;">Urban Flow</h1>
+                    <button id="langToggleBtn" class="lang-toggle-btn">TH</button>
+                </div>
+                <p data-en="Bangkok Transit Recommendation" data-th="ระบบแนะนำเส้นทางรถไฟฟ้า">Bangkok Transit Recommendation</p>
+            </div>
+            
+            <div class="search-box">
+                <div class="input-group">
+                    <label data-en="Start Station" data-th="สถานีต้นทาง">Start Station</label>
+                    <select id="startNode" class="custom-select"></select>
+                </div>
+                <div class="input-group">
+                    <label data-en="Destination" data-th="สถานีปลายทาง">Destination</label>
+                    <select id="endNode" class="custom-select"></select>
+                </div>
+                
+                <label style="font-size: 11px; color: #aaa; margin-bottom: 5px; display: block;" data-en="Optimization Mode" data-th="โหมดการค้นหา">Optimization Mode</label>
+                <div class="mode-selector">
+                    <button class="mode-btn active" data-mode="time"><span data-en="Fastest" data-th="เร็วที่สุด">Fastest</span></button>
+                    <button class="mode-btn" data-mode="cost"><span data-en="Cheapest" data-th="ประหยัดสุด">Cheapest</span></button>
+                    <button class="mode-btn" data-mode="walk"><span data-en="Walkless" data-th="เดินน้อยสุด">Walkless</span></button>
+                </div>
+                <button id="searchBtn" class="primary-btn" data-en="Calculate Route" data-th="ค้นหาเส้นทาง">Calculate Route</button>
+            </div>
+            
+            <div id="results-container">
+                <div id="results"></div>
+                <div id="ai-box" class="ai-card" style="display: none;">
+                    <div class="ai-header">✨ Gemini AI Guide</div>
+                    <div id="ai-content"></div>
+                </div>
+            </div>
+            
+            <div class="profile-card">
+                <span id="uName"></span>
+                <button onclick="logout()" class="logout-btn" data-en="Logout" data-th="ออกจากระบบ">Logout</button>
+            </div>
+        </aside>
+        <div id="map"></div>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>
